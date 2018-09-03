@@ -51,7 +51,7 @@
 					<h3>" . $row[ 'project_name' ] . "</h3>
 					<p>" . $row[ 'project_description' ] . "</p>
 				</div>
-				<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'project_description' ] . "'>Initiate this Project</a>
+				<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'projectid' ] . "'>I'm also in this project!</a>
 				<hr>";
 									}
 
