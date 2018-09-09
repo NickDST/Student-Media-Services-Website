@@ -82,11 +82,11 @@ while ( $student = $result->fetch_assoc() ):
                     </li>
                     <h3 class="menu-title">Actions</h3><!-- /.menu-title -->
 					<li>
-                        <a href="searchproject.php"> <i class="menu-icon ti-search"></i>Look Up Project </a>
+                        <a href="searchproject.php"> <i class="menu-icon ti-search"></i>Search Project </a>
                     </li>
-                     <li>
-                        <a href="addselfproject.php"> <i class="menu-icon ti-paint-roller"></i>Add Myself to Project </a>
-                    </li>
+<!--                     <li>-->
+<!--                        <a href="addselfproject.php"> <i class="menu-icon ti-paint-roller"></i>Add Myself to Project </a>-->
+<!--                    </li>-->
 					 <li>
                         <a href="createproject.php"> <i class="menu-icon ti-plus"></i>New Project Force </a>
                     </li>
@@ -114,15 +114,15 @@ while ( $student = $result->fetch_assoc() ):
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Search For...</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-map-o"></i><a href="searchproject.php">Look Up Project</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="leadership/searchstudent.php">Look Up Student</a></li>
+                            <li><i class="menu-icon fa fa-street-view"></i><a href="searchstudent.php">Look Up Student</a></li>
                         </ul>
                     </li>
 
                      <li>
-                        <a href="leadership/alterproject.php"> <i class="menu-icon ti-rocket"></i>Alter Project </a>
+                        <a href="searchproject.php"> <i class="menu-icon ti-rocket"></i>Alter Project </a>
                     </li>
                     <li>
-                        <a href="leadership/searchsig.php"> <i class="menu-icon ti-envelope"></i>View SIG </a>
+                        <a href="searchsig.php"> <i class="menu-icon ti-envelope"></i>View SIG </a>
                     </li>
 					
 					<?php if ( isset( $_SESSION[ 'exec_rights' ] ) ) { ?>
@@ -265,6 +265,20 @@ while ( $student = $result->fetch_assoc() ):
 
 		<br>
 <br>
+			<?php 	if ( isset( $_GET[ 'error' ] ) ) {
+			$fmsg = $_GET[ 'error' ]; } ?>
+		<?php 	if ( isset( $_GET[ 'success' ] ) ) {
+			$smsg = $_GET[ 'success' ]; } ?>
+		
+							<?php if(isset($smsg)){ ?>
+							<div class="alert alert-success" role="alert" style="margin-top: 20px;">
+								<?php echo $smsg; ?> </div>
+							<?php } ?>
+							<?php if(isset($fmsg)){ ?>
+							<div class="alert alert-danger" role="alert" style="margin-top: 20px;">
+								<?php echo $fmsg; ?> </div>
+							<?php } ?>
+		
 	
     <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>

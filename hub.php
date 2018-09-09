@@ -17,7 +17,57 @@
 <!--hii-->
 
 <!--Projects-->
-            <div class="col-sm-5 col-lg-5" style = "padding-left:30px;">
+   <div class="col-xl-7" style = "margin-left:15px;">
+                <div class="card" >
+                    <div class="card-header">
+                        <h4>My Projects</h4>
+                    </div>
+                    <div class="" style = "padding-left:20px; padding-top:10px; padding-right:20px;">
+							
+						<?php
+							$studentsql = "SELECT project_list.*, students_in_projects.*, students.* FROM project_list, students_in_projects, students WHERE students.studentid = students_in_projects.studentid AND students_in_projects.projectid = project_list.projectid AND students.studentid = '$id'";
+								$resultsql = mysqli_query( $connection, $studentsql );
+
+								$resultCheck = mysqli_num_rows( $resultsql );
+
+
+								if ( $resultCheck > 0 ) {
+
+									while ( $projectinfo = $resultsql->fetch_assoc() ):
+
+
+										?>
+
+						<strong><?php echo $projectinfo['project_name'];?></strong> <br>
+								<?php echo "Requestor: ".$projectinfo['requestee'];?> <br>
+
+								<?php echo $projectinfo['service_hours'];?> hours -
+								<?php echo nl2br($projectinfo['role']."\r\n");?>
+								<br>
+
+
+
+								<!-- End While for project ID -->
+								<?php endwhile; 
+				} else {
+					echo "No Projects Entered Yet";
+				}
+				?>
+						
+						
+						
+                        
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+
+
+
+
+
+
+            <div class="col-sm-4 col-lg-4" style = "padding-left:30px;">
                 <div class="card text-white bg-flat-color-3">
                     <div class="card-body pb-0">
                         <div class="dropdown float-right">
@@ -33,7 +83,24 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">72</span>
+							
+							<?php 
+							
+							$sql = "SELECT COUNT(studentid) FROM students;";
+							$resultsql = mysqli_query( $connection, $sql );
+							
+							while ( $row = $resultsql->fetch_assoc() ):
+							
+							$count = $row['COUNT(studentid)'];
+							
+							
+							endwhile;
+							
+							?>
+							
+							
+							
+                            <span class="count"><?php echo $count;?></span>
                         </h4>
                         <p class="text-light">SMS Members</p>
 
@@ -63,8 +130,9 @@
                     <div class="card-header">
                         <h4>World Domination Map</h4>
                     </div>
+					
                     <div class="Vector-map-js">
-                        <div id="vmap" class="vmap" style="height: 265px;"></div>
+                        <div id="vmap" class="vmap" style="height: 300px;"></div>
                     </div>
                 </div>
                 <!-- /# card -->

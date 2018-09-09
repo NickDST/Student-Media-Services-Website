@@ -34,10 +34,11 @@
 				</div>
 				<hr>";
 					
-				 $thing = $row[ 'request_name' ];
+				 $name_of_project = $row[ 'request_name' ];
 				 $keep_raw = $row['keep_raw'];
 				 $description = $row['request_description'];
-				 $request_name = $row['requestor_name'];
+				 $requestor_name = $row['requestor_name'];
+				 $requestor_contact = $row['requestor_contact'];
 				 $request_goal = $row['request_goal'];
 				 $datetime_due = $row['datetime_due'];
 					
@@ -57,6 +58,7 @@
 
 			<h2>Create Project</h2>
 			
+			<br>
 			
 
 
@@ -64,14 +66,14 @@
 				
 				
 
-				
+				<h3>Project Name: <?php echo "$name_of_project" ?></h3>
 
 				
 
 				<br>
-				<label for="">Name of Student Representative for this</label>
+				<label for="">ID of Student Representative for this</label>
 				<br>
-				<input type="text" name="student_rep" id="" class="form-control" placeholder="ID of Student Rep" required maxlength=7>
+				<input type="number" name="student_rep" id="" class="form-control" placeholder="ID of Student Rep" required max=3000000>
 
 				<br>
 
@@ -96,11 +98,9 @@
 				<br>
 				<input type="datetime-local" name="datetime_start" id="" class="form-control" placeholder="Start Date" required>
 				<br>
-				<label for="">Enter in the end date (if completed)</label>
-				<br>
-				<input type="date" name="datetime_end" id="" class="form-control" placeholder="End Date">
-
-				<br>
+				
+				<h4>Due Date: <?php echo "$datetime_due" ?></h4>
+				
 
 				<br>
 
@@ -140,18 +140,18 @@
 			
 						if ( isset( $_POST[ 'submit' ] ) == 'submit' & !empty( $_POST[ 'submit' ] ) ) {
 							
-							$project_name = mysqli_real_escape_string( $connection, $_POST[ 'project_name' ] );
+							//$project_name = mysqli_real_escape_string( $connection, $_POST[ 'project_name' ] );
 							$student_rep = mysqli_real_escape_string( $connection, $_POST[ 'student_rep' ] );
 							$adult_name = mysqli_real_escape_string( $connection, $_POST[ 'adult_name' ] );
 							$adult_contact = mysqli_real_escape_string( $connection, $_POST[ 'adult_contact' ] );
 							$procedure_outline = mysqli_real_escape_string( $connection, $_POST[ 'procedure_outline' ] );
 							$datetime_start = mysqli_real_escape_string( $connection, $_POST[ 'datetime_start' ] );
-							$datetime_end = mysqli_real_escape_string( $connection, $_POST[ 'datetime_end' ] );
+							//$datetime_end = mysqli_real_escape_string( $connection, $_POST[ 'datetime_end' ] );
 							$status = mysqli_real_escape_string( $connection, $_POST[ 'status' ] );
 							
 							
 							
-								$sql = "INSERT INTO project_list (project_name, student_rep, adult_name, adult_contact, datetime_start, datetime_end, status, entered_by, procedure_outline) VALUES ('$project_name', '$student_rep', '$adult_name', '$adult_contact' , '$datetime_start' , '$datetime_end', '$status', '$id', '$procedure_outline');";
+								$sql = "INSERT INTO project_list (project_name, student_rep, adult_name, adult_contact, datetime_start, datetime_end, status, entered_by, procedure_outline, keep_raw, requestor_name, description, requestor_goal, requestor_contact, requestid) VALUES ('$name_of_project', '$student_rep', '$adult_name', '$adult_contact' , '$datetime_start' , '$datetime_due', '$status', '$id', '$procedure_outline', '$keep_raw', '$requestor_name', '$description', '$request_goal', '$requestor_contact', '$request_id' );";
 
 								echo $sql;
 

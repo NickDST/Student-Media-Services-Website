@@ -112,18 +112,18 @@
 														$addstudentresult = mysqli_query( $connection, $addstudentsql );
 														if ( $addstudentresult ) {
 															//echo "Entry successfully added";
-															echo '<script>window.location.href = "addmyselfproject.php?success=Entry added";</script>';	
+															echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
 															
 
 
 														} else {
 															//echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 															//echo "Entry failed to be added";
-															echo '<script>window.location.href = "addmyselfproject.php?error=Entry failed to be added";</script>';	
+															echo '<script>window.location.href = "addselfproject2.php?error=Entry failed to be added";</script>';	
 														}
 
 													} else {
-														echo '<script>window.location.href = "addmyselfproject.php?error=Student is already in the Project";</script>';	
+														echo '<script>window.location.href = "addselfproject2.php?error=Student is already in the Project";</script>';	
 														//echo "student is already in the project";
 													}
 													

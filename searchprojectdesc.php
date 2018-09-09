@@ -21,9 +21,9 @@
                     <div class="card-header">
                         <h4>Project Details</h4>
                     </div>
-                    <div class="" style = "padding-left:20px; padding-top:10px ;">
+                    <div class="" style = "padding-left:20px; padding-top:10px; padding-right:20px;">
 						
-					<br>
+					
 						
 							<?php
 								$name = mysqli_real_escape_string( $connection, $_GET[ 'name' ] );
@@ -35,12 +35,16 @@
 								if ( $queryResults > 0 ) {
 									while ( $row = mysqli_fetch_assoc( $result ) ) {
 										$student_rep = $row['student_rep'];
+										$project_name = $row['project_name'];
+										$project_id = $row['projectid'];
+										
 										
 										?>
 
 								<h2>
 									<?php echo "Project Name: ". $row['project_name'];?>
 								</h2>
+						<br>
 								<h5>
 									<?php echo "Description: ". $row['description'];?>
 								</h5>
@@ -51,7 +55,7 @@
 								</h5>
 								<br>
 								<h5>
-									<?php echo "Goal: ". $row['requestee_goal'];?>
+									<?php echo "Goal: ". $row['requestor_goal'];?>
 								</h5>
 								<hr>
 						
@@ -75,12 +79,12 @@
 								</h5>
 								<br>
 								<h5>
-									<?php echo "Requestee: ". $row['requestee_name'];?>
+									<?php echo "Requestor: ". $row['requestor_name'];?>
 								</h5>
 								<br>
 								
 								<h5>
-									<?php echo "Requestee Contact: ". $row['requestee_contact'];?>
+									<?php echo "Requestor Contact: ". $row['requestor_contact'];?>
 								</h5>
 						
 								<br>
@@ -152,7 +156,7 @@
 						
 						
 						
-						
+						<br>
                         
                     </div>
                 </div>
@@ -171,8 +175,14 @@
                     <div class="" style = "padding-left:20px; padding-top:10px ;">
 						
 						<label for="">Add students to projects</label>
-						<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'projectid' ] . "'>I'm also in this project!</a>
+						
+						<?php echo "<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $project_name . "&id=" . $project_id . "'>I'm also in this project!</a>
+						" ?>
+						
+						
+<!--						<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'projectid' ] . "'>I'm also in this project!</a>-->
 				<hr>
+						
 						<label for="">Modify Project Details</label>
 						<br>
 						
@@ -184,7 +194,10 @@
 						
 						if(isset($_POST['modify']) & !empty(isset($_POST['modify']))){
 							if($student_rep == $id) {
-								echo "yay";
+								echo "<script>window.location.href =  'modifyproject.php?student_rep=" . $student_rep . "&id=" . $project_id . "';</script>;";
+								
+								//echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
+								
 								
 							} else {
 								

@@ -14,7 +14,7 @@ if ( isset( $_POST ) & !empty( $_POST ) ) {
 	$keep_raw = mysqli_real_escape_string( $connection, $_POST[ "keep_raw" ] );
 
 	//Inserting the data into the projects...
-	$sql = "INSERT INTO requests (request_name, requestee_name, requestee_contact, request_description, datetime_due, request_goal, keep_raw) VALUES ('$name', '$requestee', '$contact' , '$description' , '$due_date' , '$goal' , '$keep_raw');";
+	$sql = "INSERT INTO requests (request_name, requestor_name, requestor_contact, request_description, datetime_due, request_goal, keep_raw) VALUES ('$name', '$requestee', '$contact' , '$description' , '$due_date' , '$goal' , '$keep_raw');";
 
 	//echo $sql;
 
