@@ -90,12 +90,13 @@ while ( $student = $result->fetch_assoc() ):
 					 <li>
                         <a href="createproject.php"> <i class="menu-icon ti-plus"></i>New Project Force </a>
                     </li>
-					 <li>
-                        <a href="labmonitor.php"> <i class="menu-icon ti-bolt-alt"></i>Tech EXP Level</a>
-                    </li>
-					 <li>
+					<li>
                         <a href="mygroups.php"> <i class="menu-icon ti-shine"></i>My Groups</a>
                     </li>
+					 <li>
+                        <a href="labmonitor.php"> <i class="menu-icon ti-bolt-alt"></i>Equipment Certification</a>
+                    </li>
+					 
 					 <li>
                         <a href="eqhandbook.php"> <i class="menu-icon ti-book"></i>Equipment Handbook</a>
                     </li>
@@ -105,7 +106,8 @@ while ( $student = $result->fetch_assoc() ):
 					
 					
 	<?php
-						if ( isset( $_SESSION[ 'is_leadership' ] ) ) {
+						if ( isset( $_SESSION[ 'is_leadership' ] ) ) { 
+							
 							?>					
 					
                     <h3 class="menu-title">SMS Leadership Actions</h3><!-- /.menu-title -->
@@ -119,11 +121,16 @@ while ( $student = $result->fetch_assoc() ):
                     </li>
 
                      <li>
-                        <a href="searchproject.php"> <i class="menu-icon ti-rocket"></i>Alter Project </a>
+                        <a href="searchproject.php"> <i class="menu-icon ti-rocket"></i>Alter Project Info</a>
                     </li>
                     <li>
                         <a href="searchsig.php"> <i class="menu-icon ti-envelope"></i>View SIG </a>
                     </li>
+					
+					<li>
+                        <a href="searchsig.php"> <i class="menu-icon ti-blackboard"></i>Certify SIG EQ </a>
+                    </li>
+				
 					
 					<?php if ( isset( $_SESSION[ 'exec_rights' ] ) ) { ?>
 					
@@ -142,7 +149,7 @@ while ( $student = $result->fetch_assoc() ):
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
+                            
                         </ul>
                     </li>
                 </ul>

@@ -23,10 +23,14 @@
                         <h4>My Projects</h4>
                     </div>
                     <div class="" style = "padding-left:20px; padding-top:10px; padding-right:20px;">
+						
+<!--This is a comment						-->
 							
 						<?php
 							$studentsql = "SELECT project_list.*, students_in_projects.*, students.* FROM project_list, students_in_projects, students WHERE students.studentid = students_in_projects.studentid AND students_in_projects.projectid = project_list.projectid AND students.studentid = '$id'";
 								$resultsql = mysqli_query( $connection, $studentsql );
+
+
 
 								$resultCheck = mysqli_num_rows( $resultsql );
 
@@ -39,9 +43,9 @@
 										?>
 
 						<strong><?php echo $projectinfo['project_name'];?></strong> <br>
-								<?php echo "Requestor: ".$projectinfo['requestee'];?> <br>
+								<?php echo "Requestor: ".$projectinfo['requestor_name'];?> <br>
 
-								<?php echo $projectinfo['service_hours'];?> hours -
+								<?php echo "Service hours: ".$projectinfo['service_hours'];?> hours -
 								<?php echo nl2br($projectinfo['role']."\r\n");?>
 								<br>
 
