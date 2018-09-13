@@ -1,15 +1,28 @@
-<?php include 'hubheader.php' ?>
+<?php include 'hubheader.php';
+
+
+$eq_name = mysqli_real_escape_string( $connection, $_GET[ 'name' ] );
+								
+$projectid = mysqli_real_escape_string( $connection, $_GET[ 'id' ] );
+
+$eq_id = mysqli_real_escape_string( $connection, $_GET[ 'eq_id' ] );
+
+
+
+?>
+
+
 
      <div class="col-xl-10" >
                 <div class="card" >
                     <div class="card-header">
-                        <h4>This is the search result boi. I tried my best hopefully you found it. </h4>
+                        <h4>Equipment Results</h4>
                     </div>
                     <div class="" style = "padding-left:20px; padding-top:10px ;">
 							<?php
 								if ( isset( $_POST[ 'submit-search' ] ) ) {
 									$search = mysqli_real_escape_string( $connection, $_POST[ 'search' ] );
-									$sql = "SELECT * FROM project_list WHERE project_name LIKE '%$search%' OR requestor_name LIKE '%$search%' OR description LIKE '%$search%' OR datetime_end LIKE '%$search%'";
+									$sql = "SELECT * FROM eqcatalog WHERE eq_id LIKE '%$search%' OR eq_code LIKE '%$search%' OR eq_name LIKE '%$search%' OR eq_description LIKE '%$search%'";
 									
 									//echo $search;
 
@@ -27,12 +40,12 @@
 											echo "
 				
 					<div>
-					<h3>" . $row[ 'project_name' ] . "</h3>
-					<p>" . $row[ 'description' ] . "</p>
-					<p>" . $row[ 'datetime_end' ] . "</p>
-					<p> Requestor: " . $row[ 'requestor_name' ] . "</p>
+					<h3>" . $row[ 'eq_name' ] . "</h3>
+					<p>" . $row[ 'eq_description' ] . "</p>
+					<p>" . $row[ 'eq_code' ] . "</p>
+				
 					</div>
-					<a class = 'btn btn-success' href = 'activateproject.php?name=" . $row[ 'request_name' ] . "&id=" . $row[ 'request_id' ] . "'>Initiate this Project</a>
+					<a class = 'btn btn-success' href = 'addeq.php?name=" . $row[ 'eq_name' ] . "&eq_id=" . $row[ 'eq_id' ] . "&projectid=" . $projectid . "'>Add This equipment</a>
 				<hr>";
 											/*	<a href = 'confirmpending.php?name=".$row['requestee']."&startdate=".$row['datetime_start']."&id=".$row['requestid']."'>More Info
 												</a> */

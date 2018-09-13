@@ -125,12 +125,14 @@
 						<hr>
 					
 						<h3>Equipment Used:</h3>
+						<br>
 						
 						<?php
 								
 
 									
-								$sql = "SELECT project_list.*, eq_in_projects.*, eqcatalog.* FROM project_list, eq_in_projects, eqcatalog WHERE project_list.projectid = eq_in_projects.projectid AND project_list.projectid = '$projectid'";
+								//$sql = "SELECT project_list.*, eq_in_projects.*, eqcatalog.* FROM project_list, eq_in_projects, eqcatalog WHERE project_list.projectid = eq_in_projects.projectid AND project_list.projectid = '$projectid'";
+						$sql = "SELECT project_list.*, eq_in_projects.*, eqcatalog.* FROM project_list, eq_in_projects, eqcatalog WHERE project_list.projectid = eq_in_projects.projectid AND project_list.projectid = '$projectid' AND eq_in_projects.eq_id = eqcatalog.eq_id";
 									
 									//echo $sql;
 								$result = mysqli_query( $connection, $sql );
@@ -141,10 +143,10 @@
 									
 										
 
-								<?php echo $eq_in_projects['eq_name'];?> <span>hours - </span>
+								<?php echo $eq_in_projects['eq_name'];?> 
 								
 								<br>
-						<br>
+					
 								<?php
 								endwhile;
 									
@@ -217,7 +219,7 @@
 						
 						if(isset($_POST['addeq']) & !empty(isset($_POST['addeq']))){
 							
-								echo "<script>window.location.href =  'addeq.php?student_rep=" . $student_rep . "&id=" . $project_id . "';</script>;";
+								echo "<script>window.location.href =  'addeqsearch.php?student_rep=" . $student_rep . "&id=" . $project_id . "';</script>;";
 								
 								//echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
 	
@@ -229,6 +231,28 @@
 						?>
 <!--						<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'projectid' ] . "'>Document Equipment</a>-->
 				<hr>
+						<label for="">Remove Equipment</label>
+						<br>
+						
+						<form method="POST">
+						<button type="submit" name="remove_eq" class = 'btn btn-success'>Remove EQ</button>
+						</form>
+						
+						<?php 
+						
+						if(isset($_POST['remove_eq']) & !empty(isset($_POST['remove_eq']))){
+							
+								echo "<script>window.location.href =  'removeeq.php?student_rep=" . $student_rep . "&id=" . $project_id . "';</script>;";
+								
+								//echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
+	
+							}
+
+						
+						
+						
+						?>
+						
 	
 	
 						

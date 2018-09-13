@@ -93,12 +93,21 @@ while ( $student = $result->fetch_assoc() ):
 					<li>
                         <a href="mygroups.php"> <i class="menu-icon ti-shine"></i>My Groups</a>
                     </li>
+					
+					<li>
+                        <a href="searchsig.php"> <i class="menu-icon ti-envelope"></i>View SIG </a>
+                    </li>
+					
 					 <li>
                         <a href="labmonitor.php"> <i class="menu-icon ti-bolt-alt"></i>Equipment Certification</a>
                     </li>
 					 
 					 <li>
                         <a href="eqhandbook.php"> <i class="menu-icon ti-book"></i>Equipment Handbook</a>
+                    </li>
+					
+					<li>
+                        <a href="allprojects.php"> <i class="menu-icon ti-align-justify"></i>All Projects Table</a>
                     </li>
 					
 					
@@ -123,9 +132,12 @@ while ( $student = $result->fetch_assoc() ):
                      <li>
                         <a href="searchproject.php"> <i class="menu-icon ti-rocket"></i>Alter Project Info</a>
                     </li>
-                    <li>
-                        <a href="searchsig.php"> <i class="menu-icon ti-envelope"></i>View SIG </a>
+					
+					<li>
+                        <a href="mysig.php"> <i class="menu-icon ti-envelope"></i>My SIG </a>
                     </li>
+					
+                    
 					
 					<li>
                         <a href="searchsig.php"> <i class="menu-icon ti-blackboard"></i>Certify SIG EQ </a>
