@@ -1,6 +1,6 @@
 <?php include 'hubheader.php';
 
-
+//this is a file that adds equipment to a project
 $name = mysqli_real_escape_string( $connection, $_GET[ 'name' ] );
 								
 $eq_id = mysqli_real_escape_string( $connection, $_GET[ 'eq_id' ] );
