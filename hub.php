@@ -17,6 +17,50 @@
 <!--hii-->
 
 <!--Projects-->
+
+ <div class="col-sm-11 col-lg-11" style = "padding-left:30px;">
+                <div class="card text-white bg-flat-color-3">
+                    <div class="card-body pb-0">
+                        <div class="dropdown float-right">
+                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                                <i class="fa fa-cog"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu-content">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="mb-0">
+							
+							<?php 
+							
+							$sql = "SELECT COUNT(studentid) FROM students;";
+							$resultsql = mysqli_query( $connection, $sql );
+							
+							while ( $row = $resultsql->fetch_assoc() ):
+							
+							$count = $row['COUNT(studentid)'];
+							
+							
+							endwhile;
+							
+							?>
+							
+							
+							
+                            <span class="count"><?php echo $count;?></span>
+                        </h4>
+                        <p class="text-light">SMS Members</p>
+
+
+                    </div>
+
+                </div>
+            </div>
+
    <div class="col-xl-7" style = "margin-left:15px;">
                 <div class="card" >
                     <div class="card-header">
@@ -71,65 +115,35 @@
 
 
 
-            <div class="col-sm-4 col-lg-4" style = "padding-left:30px;">
-                <div class="card text-white bg-flat-color-3">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-							
-							<?php 
-							
-							$sql = "SELECT COUNT(studentid) FROM students;";
-							$resultsql = mysqli_query( $connection, $sql );
-							
-							while ( $row = $resultsql->fetch_assoc() ):
-							
-							$count = $row['COUNT(studentid)'];
-							
-							
-							endwhile;
-							
-							?>
-							
-							
-							
-                            <span class="count"><?php echo $count;?></span>
-                        </h4>
-                        <p class="text-light">SMS Members</p>
 
-
+  <div class="col-xl-4" style = "margin-left:15px;">
+                <div class="card" >
+                    <div class="card-header">
+                        <h4>Extra Notes</h4>
                     </div>
-
+                    <div class="" style = "padding-left:20px; padding-top:10px; padding-right:20px;">
+						
+						<p>Welcome to the SMS database hub. Here you can gain service hours, start projects, be certified to use equipment, look at equipment handouts, look at a pointless world domination map and whatever else Nick programmed into the system. </p>
+						
+<!--This is a comment						-->
+</div>
                 </div>
+                <!-- /# card -->
             </div>
+
+
+
+
 
             <!--/.col-->
 			<div class="col-sm-10 col-lg-10">
-                <div class="">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-							
-			   					</div>
-                            </div>
-                        </div>
-		
+               
 				
 				
 				
 				
 				
-      <div class="col-xl-10" >
+      <div class="col-xl-8"  >
                 <div class="card" >
                     <div class="card-header">
                         <h4>World Domination Map</h4>
@@ -141,8 +155,15 @@
                 </div>
                 <!-- /# card -->
             </div>
+				
+		
+				
 
         </div> <!-- .content -->
+
+		
+           
+				
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->

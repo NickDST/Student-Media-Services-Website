@@ -103,7 +103,7 @@ while ( $student = $result->fetch_assoc() ):
                     </li>
 					 
 					 <li>
-                        <a href="eqhandbook.php"> <i class="menu-icon ti-book"></i>Equipment Handbook</a>
+                        <a href="breath_becomes_air.pdf"> <i class="menu-icon ti-book"></i>Equipment Handbook</a>
                     </li>
 					
 					<li>
@@ -142,7 +142,7 @@ while ( $student = $result->fetch_assoc() ):
 					<?php if ( isset( $_SESSION[ 'exec_rights' ] ) ) { ?>
 					
                      <li>
-                        <a href="execnotes.php"> <i class="menu-icon ti-write"></i>Update Exec Notes </a>
+                        <a href=" https://docs.google.com/document/d/1ZAs-7TtzxQ9RXrsh73YL5MToKB4IM0jgtVA1c3R_Z-M/edit#"> <i class="menu-icon ti-write"></i>Update Exec Notes </a>
                     </li>
 					<?php } ?>
 					
@@ -154,8 +154,8 @@ while ( $student = $result->fetch_assoc() ):
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Stuff</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="login.php">Login</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="register.php">Register</a></li>
                             
                         </ul>
                     </li>

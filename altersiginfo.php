@@ -42,7 +42,7 @@ if ($queryResults > 0) {
 			<h2> Sig Details</h2>
 		</div>
 		<div class="" style="padding-left:20px; padding-top:10px ; padding-right:20px;">
-			<h4>Welcome!</h4>
+			
 			
 			
 							<?php
@@ -58,7 +58,7 @@ if ($queryResults > 0) {
 								while ( $siginfo = $result->fetch_assoc() ):	?>
 									
 
-								<?php echo "<h3>". $siginfo['sig_name'] ."</h3>";?>
+								<?php echo "<h3>". $siginfo['sig_name'] ."</h3><br>";?>
 								
 						
 								<?php echo "Description: ".$siginfo['sig_desc'];?>
@@ -70,6 +70,7 @@ if ($queryResults > 0) {
 									
 							 ?>
 						<br>
+			
 							
 						<?php
 						//echo $name;
@@ -95,7 +96,7 @@ if ($queryResults > 0) {
 						
 						
 						
-						
+						<h4>List of Members:</h4>
 						
 						
 						<?php
