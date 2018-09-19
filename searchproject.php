@@ -16,7 +16,7 @@
                         <h4>Search for a Project</h4>
                     </div>
                     <div class="" style = "padding-left:20px; padding-top:10px ;">
-	<form action="createprojectsearch.php" method="POST">
+	<form action="searchprojectresult.php" method="POST">
 								<input type="text" name="search" placeholder="Search" maxlength=50>
 								<button type="submit" name="submit-search">Submit</button>
 							</form>

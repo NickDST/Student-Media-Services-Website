@@ -61,7 +61,13 @@
                 </div>
             </div>
 
-   <div class="col-xl-7" style = "margin-left:15px;">
+
+      <!--/.col-->
+			<div class="col-sm-7 col-lg-7">
+               
+				
+
+   <div class="col-xl-12" style = "">
                 <div class="card" >
                     <div class="card-header">
                         <h4>My Projects</h4>
@@ -109,41 +115,9 @@
                 </div>
                 <!-- /# card -->
             </div>
-
-
-
-
-
-
-
-  <div class="col-xl-4" style = "margin-left:15px;">
-                <div class="card" >
-                    <div class="card-header">
-                        <h4>Extra Notes</h4>
-                    </div>
-                    <div class="" style = "padding-left:20px; padding-top:10px; padding-right:20px;">
-						
-						<p>Welcome to the SMS database hub. Here you can gain service hours, start projects, be certified to use equipment, look at equipment handouts, look at a pointless world domination map and whatever else Nick programmed into the system. </p>
-						
-<!--This is a comment						-->
-</div>
-                </div>
-                <!-- /# card -->
-            </div>
-
-
-
-
-
-            <!--/.col-->
-			<div class="col-sm-10 col-lg-10">
-               
+		
 				
-				
-				
-				
-				
-      <div class="col-xl-8"  >
+      <div class="col-xl-12"  >
                 <div class="card" >
                     <div class="card-header">
                         <h4>World Domination Map</h4>
@@ -161,6 +135,36 @@
 
         </div> <!-- .content -->
 
+
+
+
+
+
+
+  <div class="col-xl-4" style = "margin-left:15px;">
+                <div class="card" >
+                    <div class="card-header">
+                        <h4>Extra Notes</h4>
+                    </div>
+                    <div class="" style = "padding-left:20px; padding-top:10px; padding-right:20px;">
+						
+						<p>Welcome to the SMS database hub. Here you can gain service hours, start projects, be certified to use equipment, look at equipment handouts, look at a pointless world domination map and whatever else Nick programmed into the system. </p>
+						<p>Welcome to the SMS database hub. Here you can gain service hours, start projects, be certified to use equipment, look at equipment handouts, look at a pointless world domination map and whatever else Nick programmed into the system. </p>
+						
+<!--This is a comment						-->
+</div>
+                </div>
+                <!-- /# card -->
+            </div>
+
+
+
+
+
+      
+				
+				
+		
 		
            
 				

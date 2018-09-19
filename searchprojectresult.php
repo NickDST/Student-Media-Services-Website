@@ -9,7 +9,7 @@
 							<?php
 								if ( isset( $_POST[ 'submit-search' ] ) ) {
 									$search = mysqli_real_escape_string( $connection, $_POST[ 'search' ] );
-									$sql = "SELECT * FROM requests WHERE request_name LIKE '%$search%' OR requestor_name LIKE '%$search%' OR request_description LIKE '%$search%' OR datetime_due LIKE '%$search%'";
+									$sql = "SELECT * FROM project_list WHERE project_name LIKE '%$search%' OR requestor_name LIKE '%$search%' OR description LIKE '%$search%' OR datetime_end LIKE '%$search%'";
 									
 									//echo $search;
 
@@ -27,9 +27,9 @@
 											echo "
 				
 					<div>
-					<h3>" . $row[ 'request_name' ] . "</h3>
-					<p>" . $row[ 'request_description' ] . "</p>
-					<p>" . $row[ 'datetime_due' ] . "</p>
+					<h3>" . $row[ 'project_name' ] . "</h3>
+					<p>" . $row[ 'description' ] . "</p>
+					<p>" . $row[ 'datetime_end' ] . "</p>
 					<p> Requestor: " . $row[ 'requestor_name' ] . "</p>
 					</div>
 					<a class = 'btn btn-success' href = 'activateproject.php?name=" . $row[ 'request_name' ] . "&id=" . $row[ 'request_id' ] . "'>Initiate this Project</a>

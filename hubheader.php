@@ -181,9 +181,9 @@ while ( $student = $result->fetch_assoc() ):
                     <div class="header-left">
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                         <div class="form-inline">
-                            <form class="search-form">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-                                <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
+                            <form class="search-form" action="searchprojectresult.php" method="POST">
+                                <input class="form-control mr-sm-2" type="text" name = "search" placeholder="Project Search ..." aria-label="Search">
+                                <button class="" type="submit" name="submit-search"><i class="fa fa-binoculars"></i></button>
                             </form>
                         </div>
 
@@ -200,11 +200,11 @@ while ( $student = $result->fetch_assoc() ):
                             </a>
                             <a class="dropdown-item media bg-flat-color-4" href="#">
                                 <i class="fa fa-info"></i>
-                                <p>Server #2 overloaded.</p>
+                                <p>The Sichuan has entered the game.</p>
                             </a>
                             <a class="dropdown-item media bg-flat-color-5" href="#">
                                 <i class="fa fa-warning"></i>
-                                <p>Server #3 overloaded.</p>
+                                <p>Fleet 32 has gone down!</p>
                             </a>
                           </div>
                         </div>
@@ -222,9 +222,8 @@ while ( $student = $result->fetch_assoc() ):
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+                                <a class="nav-link" href="mygroups.php"><i class="fa fa- user"></i>My Profile</a>
 
-                                <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
                                 <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
@@ -232,25 +231,7 @@ while ( $student = $result->fetch_assoc() ):
                         </div>
                     </div>
 
-                    <div class="language-select dropdown" id="language-select">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown"  id="language" aria-haspopup="true" aria-expanded="true">
-                            <i class="flag-icon flag-icon-us"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="language" >
-                            <div class="dropdown-item">
-                                <span class="flag-icon flag-icon-fr"></span>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-es"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-us"></i>
-                            </div>
-                            <div class="dropdown-item">
-                                <i class="flag-icon flag-icon-it"></i>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                 </div>
             </div>

@@ -16,13 +16,15 @@
 										<th>Project Name</th>
 										<th>Student Rep</th>
 										<th>Adult Name</th>
-										<th>Adult Contact</th>
+										
 										<th>Datetime Start</th>
-										<th>Datetime End</th>
+										
 										<th>Status</th>
-										<th>keep raw</th>
+										
 										<th>Requestor Name</th>
-										<th>Requestor Contact</th>
+										
+										<th>View Project Details</th>
+										
 										
 										
 										
@@ -54,13 +56,18 @@
     <td>" . $row[ "project_name" ] . "</td>
     <td>" . $row[ 'name' ] . "</td>
     <td>" . $row[ "adult_name" ] . "</td>
-    <td>" . $row[ "adult_contact" ] . "</td>
+   
 	<td>" . $row[ "datetime_start" ] . "</td>
-	<td>" . $row[ "datetime_end" ] . "</td>
+	
 	<td>" . $row[ "status" ] . "</td>
-	<td>" . $row[ "keep_raw" ] . "</td>
+	
 	<td>" . $row[ "requestor_name" ] . "</td>
-	<td>" . $row[ "requestor_contact" ] . "</td>
+	
+	<td>" . "<a class = 'btn btn-success' href = 'searchprojectdesc.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'projectid' ] . "'>View Project Details</a>" . "</td>
+	
+	
+	
+	
 
     </tr>";
 
