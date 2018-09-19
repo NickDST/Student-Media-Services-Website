@@ -95,8 +95,15 @@ while ( $student = $result->fetch_assoc() ):
                     </li>
 					
 					<li>
+                        <a href="https://docs.google.com/spreadsheets/d/1AHKh38W3ocQ2liKP0oKMxwvfQe4TEyGuZkITqCbnBqs/edit?usp=sharing"> <i class="menu-icon ti-calendar"></i>SMS Events Calendar </a>
+                    </li>
+					
+					<li>
                         <a href="searchsig.php"> <i class="menu-icon ti-envelope"></i>View SIG </a>
                     </li>
+					
+				
+					
 					
 					 <li>
                         <a href="labmonitor.php"> <i class="menu-icon ti-bolt-alt"></i>Equipment Certification</a>
@@ -154,7 +161,7 @@ while ( $student = $result->fetch_assoc() ):
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Stuff</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="login.php">Login</a></li>
+                            <li><i class="menu-icon fa fa-sign-in"></i><a href="logout.php">Log out</a></li>
                             <li><i class="menu-icon fa fa-sign-in"></i><a href="register.php">Register</a></li>
                             
                         </ul>
