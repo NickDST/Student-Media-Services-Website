@@ -4,7 +4,7 @@ $name = mysqli_real_escape_string( $connection, $_GET[ 'name' ] );
 ?>
 
 
-	      <div class="col-xl-8" >
+	      <div class="col-xl-11" >
                 <div class="card" >
                     <div class="card-header">
                         <h4>Sig Details</h4>

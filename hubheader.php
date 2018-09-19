@@ -91,7 +91,7 @@ while ( $student = $result->fetch_assoc() ):
                         <a href="createproject.php"> <i class="menu-icon ti-plus"></i>New Project Force </a>
                     </li>
 					<li>
-                        <a href="mygroups.php"> <i class="menu-icon ti-shine"></i>My Groups</a>
+                        <a href="mygroups.php"> <i class="menu-icon ti-shine"></i>My Info and Projects</a>
                     </li>
 					
 					<li>
@@ -137,11 +137,6 @@ while ( $student = $result->fetch_assoc() ):
                         <a href="mysig.php"> <i class="menu-icon ti-envelope"></i>My SIG </a>
                     </li>
 					
-                    
-					
-					<li>
-                        <a href="searchsig.php"> <i class="menu-icon ti-blackboard"></i>Certify SIG EQ </a>
-                    </li>
 				
 					
 					<?php if ( isset( $_SESSION[ 'exec_rights' ] ) ) { ?>
@@ -313,3 +308,46 @@ while ( $student = $result->fetch_assoc() ):
     <script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
     <script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
 		<?php endwhile ?>
+		
+		
+<!--		
+
+
+
+<div class="col-xl-12">
+	<div class="card">
+		<div class="card-header">
+
+			<h2> Activate the project </h2>
+		</div>
+		<div class="" style="padding-left:20px; padding-top:10px ; padding-right:20px;">
+
+		</div>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
