@@ -146,10 +146,10 @@ if ($queryResults > 0) {
 		</div>
 		<div class="" style="padding-left:20px; padding-top:10px ; padding-right:20px;">
 			
-			<p>You can certify out of this list of equipment:</p>
+<!--			<p>You can certify out of this list of equipment:</p>-->
 			
 			<?php 
-			
+			/*
 			$sql = "SELECT eq_in_sigs.*, eqcatalog.* FROM eq_in_sigs, eqcatalog WHERE eq_in_sigs.sig_name = '$sig_name' AND eq_in_sigs.eq_id = eqcatalog.eq_id";
 			
 			$result = mysqli_query($connection, $sql);
@@ -161,7 +161,7 @@ if ($queryResults > 0) {
 				
 				
 			}
-			
+			*/
 			?>
 			<br>
 			

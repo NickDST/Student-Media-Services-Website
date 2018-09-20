@@ -176,7 +176,7 @@ if ( $queryResults > 0 ) {
 	      <div class="col-xl-11" >
                 <div class="card" >
                     <div class="card-header">
-                        <h3>List of Equipment for this SIG</h3>
+                        <h3>List of Equipment to certify</h3>
                     </div>
                     <div class="" style = "padding-left:20px; padding-top:10px ;">
 						
@@ -191,7 +191,9 @@ if ( $queryResults > 0 ) {
 						
 						
 							<?php
-								$sql = "SELECT eqcatalog.*, eq_in_sigs.* FROM eqcatalog, eq_in_sigs WHERE eq_in_sigs.eq_id = eqcatalog.eq_id AND eq_in_sigs.sig_name = '$sig_name'";
+								//$sql = "SELECT eqcatalog.*, eq_in_sigs.* FROM eqcatalog, eq_in_sigs WHERE eq_in_sigs.eq_id = eqcatalog.eq_id AND eq_in_sigs.sig_name = '$sig_name'";
+						
+								$sql = "SELECT * FROM eqcatalog";
 								$result = mysqli_query( $connection, $sql );
 								$queryResults = mysqli_num_rows( $result );
 								if ( $queryResults > 0 ) {

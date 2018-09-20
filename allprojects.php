@@ -7,7 +7,7 @@
 
 			<h2> All Projects Table </h2>
 		</div>
-		<div class="col-xl-10" style="padding-left:20px; padding-top:10px ; padding-right:20px;">
+		<div class="col-xl-12" style="padding-left:20px; padding-top:10px ; padding-right:20px;">
 			
 			
 								<table class="table table-light project-table table-hover">
