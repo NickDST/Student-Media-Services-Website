@@ -24,7 +24,7 @@ $sql = "SELECT * FROM students WHERE studentid = '$id'";
 $result = mysqli_query( $connection, $sql );
 while ( $student = $result->fetch_assoc() ):
 	
-
+$username_fullname = $student['name'];
 
 
 ?>
@@ -159,6 +159,14 @@ while ( $student = $result->fetch_assoc() ):
                      <li>
                         <a href="searchstudenteq.php"> <i class="menu-icon ti-rocket"></i>Search Student EQ</a>
                     </li>
+					  <li>
+                        <a href="tech_list_equipment.php"> <i class="menu-icon ti-rocket"></i>All Equipment</a>
+                    </li>
+					  <li>
+                        <a href="tech_add_equipment.php"> <i class="menu-icon ti-rocket"></i>Add Equipment</a>
+                    </li>
+					
+					
 					
 					
 					<h3 class="menu-title">Exec/Developer Actions</h3><!-- /.menu-title -->
@@ -166,14 +174,16 @@ while ( $student = $result->fetch_assoc() ):
 					      <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Alter Files</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="searchproject.php">Add student to SMS</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="searchstudent.php">Remove Student in SMS</a></li>
-							<li><i class="menu-icon fa fa-street-view"></i><a href="searchstudent.php">Add Equipment</a></li>
-							<li><i class="menu-icon fa fa-map-o"></i><a href="searchproject.php">Modify Equipment Information</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href="exec_add_student.php">Add Student to SMS</a></li>
+							<li><i class="menu-icon fa fa-map-o"></i><a href="searchstudent.php">search student</a></li>
+                           
+						
+						
                             
                         </ul>
                     </li>
 
+					
 					
 					<?php } ?>
 					

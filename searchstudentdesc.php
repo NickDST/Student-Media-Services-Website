@@ -4,7 +4,7 @@ if ( !isset( $_SESSION[ 'is_leadership' ] ) ) {
 	header( 'Location: hub.php' );
 	exit;
 }
-
+$studentid = mysqli_real_escape_string( $connection, $_GET[ 'id' ] );
 ?>
 
 <!doctype html>
@@ -66,7 +66,7 @@ if ( !isset( $_SESSION[ 'is_leadership' ] ) ) {
 						
 							<?php
 								$name = mysqli_real_escape_string( $connection, $_GET[ 'name' ] );
-								$studentid = mysqli_real_escape_string( $connection, $_GET[ 'id' ] );
+								//$studentid = mysqli_real_escape_string( $connection, $_GET[ 'id' ] );
 								//	echo $projectid;
 								$sql = "SELECT * from students where studentid = '$studentid'";
 								$result = mysqli_query( $connection, $sql );
@@ -119,9 +119,47 @@ if ( !isset( $_SESSION[ 'is_leadership' ] ) ) {
 								<?php
 								endwhile;
 									
-							} ?>
+								} ?>
 						<br>
 						<hr>
+						
+						
+						
+						<h3>SIGs the student is involved in:</h3>
+						<br>
+						
+						<?php					
+								$sql = "SELECT sigs.*, students_in_sigs.*, students.* FROM sigs, students_in_sigs, students WHERE sigs.sig_name = students_in_sigs.sig_name AND students.studentid = students_in_sigs.studentid AND students.studentid = '$studentid'";
+									
+									//echo $sql;
+								$result = mysqli_query( $connection, $sql );
+									
+								$queryResults = mysqli_num_rows( $result );
+								
+									if ($queryResults == 0) {
+										echo "Student is not involved in any SIGs yet.";
+									}
+
+								while ( $projects = $result->fetch_assoc() ):	?>
+
+
+								<?php echo $projects['sig_name']. "<br>";?> 
+								<?php echo $projects['sig_position']. "<br>";?> 
+								
+								<br>
+						
+								<?php
+								endwhile;
+									
+						?>
+						
+						<hr>
+						
+						
+						
+						
+						
+						
 					
 						<h3>Certified EQ to use:</h3>
 						<br>

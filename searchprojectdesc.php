@@ -172,7 +172,7 @@
                     </div>
                     <div class="" style = "padding-left:20px; padding-top:10px ;">
 						
-						<label for="">Add students to projects</label>
+						<label for="">Add students to projects</label><br>
 						
 						<?php echo "<a class = 'btn btn-success' href = 'addselfproject2.php?name=" . $project_name . "&id=" . $project_id . "'>I'm also in this project!</a>
 						" ?>

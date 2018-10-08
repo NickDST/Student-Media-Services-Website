@@ -20,7 +20,7 @@ $sig_name = mysqli_real_escape_string( $connection, $_GET[ 'signame' ] );
 	<div class="card">
 		<div class="card-header">
 
-			<h2> Activate the project </h2>
+			<h2> Search Student Equipment </h2>
 		</div>
 		<div class="" style="padding-left:20px; padding-top:10px ; padding-right:20px;">
 
