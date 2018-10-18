@@ -8,13 +8,7 @@
 </head>
 
 <body>
-	
-	
-	
 
-	
-	
-	
 	
 	      <div class="col-xl-8" >
                 <div class="card" >

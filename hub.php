@@ -18,6 +18,19 @@
 
 <!--Projects-->
 
+<?php 
+
+//This is just to see at what times people access this page.... don't worry about it :D
+	$sql = "INSERT INTO access_times (student) VALUES ('$username_fullname');";
+	$result = mysqli_query( $connection, $sql );
+	if ( $result ) {}
+
+?>
+
+
+
+
+
  <div class="col-sm-11 col-lg-11" style = "padding-left:30px;">
                 <div class="card text-white bg-flat-color-3">
                     <div class="card-body pb-0">
@@ -166,7 +179,7 @@
 				
 		
 		
-           
+    
 				
     </div><!-- /#right-panel -->
 

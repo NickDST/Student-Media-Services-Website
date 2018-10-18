@@ -1,10 +1,12 @@
 <?php
 include 'includes/dbh.inc.php';
 include 'emailheader.php';
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
 
 if ( isset( $_POST ) & !empty( $_POST ) ) {
-	
+
 	$name = mysqli_real_escape_string( $connection, $_POST[ "name" ] );
 	$requestee = mysqli_real_escape_string( $connection, $_POST[ "requestee" ] );
 	$contact = mysqli_real_escape_string( $connection, $_POST[ "contact" ] );
@@ -18,24 +20,91 @@ if ( isset( $_POST ) & !empty( $_POST ) ) {
 
 	//echo $sql;
 
-	
+
 	$result = mysqli_query( $connection, $sql );
-	
+
 	if ( $result ) {
 		$smsg = "Request successfully sent!";
 
 
-$to = $projectmanager;
-$subject = "Your Request has been Activated!";
-$message = "Hi";
+		$to = $project_manager_email;
+		$subject = "Someone has submitted a request";
+		$message = "Hi";
 
-$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
-    'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
-    'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+		$headers = 'From: SMS Network <SMS@database.com>' . PHP_EOL .
+		'Reply-To: SMS Network <SMS@database.com>' . PHP_EOL .
+		'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+		//mail( $to, $subject, $message, $headers );
 			
-mail($to, $subject, $message, $headers);
-//echo "<br>email to requestee  sent";			
-		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+		//echo "<br>email to requestee  sent";			
+
+
+
+		$to = $contact;
+		$subject = "Thank you for submitting a request!";
+		$message = "We will get back to you shortly";
+
+		$headers = 'From: SMS Network <SMS@database.com>' . PHP_EOL .
+		'Reply-To: SMS Network <SMS@database.com>' . PHP_EOL .
+		'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+		//mail( $to, $subject, $message, $headers );
+			
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+		//echo "<br>email to requestee  sent";			
+
 
 
 
@@ -49,80 +118,253 @@ mail($to, $subject, $message, $headers);
 
 
 
-if (isset($_POST["visualdesign"])){
-								   								   
+if ( isset( $_POST[ "visualdesign" ] ) ) {
+	$to = $visual_design_email;
+	$subject = "Your Request has been Activated!";
+	$message = "Hi";
 
-								 }
+	$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
+	'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
+	'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
 
-if (isset($_POST["animation"])){ 
-	$to = $projectmanager;
-$subject = "Your Request has been Activated!";
-$message = "Hi";
+	//mail( $to, $subject, $message, $headers );
+		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
 
-$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
-    'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
-    'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
-			
-mail($to, $subject, $message, $headers);
-//echo "<br>email to requestee  sent";		
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
 
-								 }
-
-if (isset($_POST["livestream"])){ 
-	$to = $projectmanager;
-$subject = "Your Request has been Activated!";
-$message = "Hi";
-
-$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
-    'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
-    'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
-			
-mail($to, $subject, $message, $headers);
-//echo "<br>email to requestee  sent";		
-
-								 }
-
-if (isset($_POST["documentation"])){ 
-	$to = $projectmanager;
-$subject = "Your Request has been Activated!";
-$message = "Hi";
-
-$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
-    'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
-    'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
-			
-mail($to, $subject, $message, $headers);
-//echo "<br>email to requestee  sent";		
-
-								 }
-
-if (isset($_POST["music"])){ 
-$to = $projectmanager;
-$subject = "Your Request has been Activated!";
-$message = "Hi";
-
-$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
-    'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
-    'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
-			
-mail($to, $subject, $message, $headers);
-//echo "<br>email to requestee  sent";		
+	//echo "<br>email to requestee  sent";					   								   
 
 }
 
-if (isset($_POST["videogame"])){ 
-	
-$to = $projectmanager;
-$subject = "Your Request has been Activated!";
-$message = "Hi";
 
-$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
-    'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
-    'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
-			
-mail($to, $subject, $message, $headers);
-//echo "<br>email to requestee  sent";		
-								 }
+
+if ( isset( $_POST[ "animation" ] ) ) {
+	$to = $principia_email;
+	$subject = "Your Request has been Activated!";
+	$message = "Hi";
+
+	$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
+	'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
+	'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+	//mail( $to, $subject, $message, $headers );
+		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+	//echo "<br>email to requestee  sent";		
+
+}
+
+if ( isset( $_POST[ "livestream" ] ) ) {
+	$to = $livestream_email;
+	$subject = "Your Request has been Activated!";
+	$message = "Hi";
+
+	$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
+	'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
+	'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+	//mail( $to, $subject, $message, $headers );
+		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+	//echo "<br>email to requestee  sent";		
+
+}
+
+if ( isset( $_POST[ "documentation" ] ) ) {
+	$to = $united_herald_email;
+	$subject = "Your Request has been Activated!";
+	$message = "Hi";
+
+	$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
+	'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
+	'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+	//mail( $to, $subject, $message, $headers );
+		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+	//echo "<br>email to requestee  sent";		
+
+}
+
+if ( isset( $_POST[ "music" ] ) ) {
+	$to = $music_composition_email;
+	$subject = "Your Request has been Activated!";
+	$message = "Hi";
+
+	$headers = 'From: SMS Database <SMS@database.com>' . PHP_EOL .
+	'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
+	'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+	//mail( $to, $subject, $message, $headers );
+		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+	//echo "<br>email to requestee  sent";		
+
+}
+
+if ( isset( $_POST[ "videogame" ] ) ) {
+
+	$to = $game_development_email;
+	$subject = "Your Request has been Activated!";
+	$message = "Hi";
+
+	$headers = 'From: Student Media Services <SMS@database.com>' . PHP_EOL .
+	'Reply-To: SMS Database <SMS@database.com>' . PHP_EOL .
+	'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+
+	//mail( $to, $subject, $message, $headers );
+		
+	$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+
+	//echo "<br>email to requestee  sent";		
+}
 
 
 
@@ -140,8 +382,8 @@ mail($to, $subject, $message, $headers);
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- Optional theme -->
-<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">-->
-<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+	<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">-->
+	<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
 	<link rel="stylesheet" href="form.css">
 	<!--        <script src="form.js"></script>-->
 </head>
@@ -179,8 +421,8 @@ mail($to, $subject, $message, $headers);
 							<input type="email" class="form-control" id="email" name="contact" required>
 						</div>
 					</div>
-					
-						<!--Goal?					-->
+
+					<!--Goal?					-->
 					<div class="row">
 						<div class="col-sm-12 form-group">
 							<label for="name"> Name of Request</label>
@@ -226,32 +468,32 @@ mail($to, $subject, $message, $headers);
 							<label for="name"> Involves: </label><br>
 							<input type="checkbox" name="visualdesign" value="visualdesign"> Visual Design<br><br>
 							<input type="checkbox" name="animation" value="animation"> Motion Graphic/Animation<br><br>
-							<input type="checkbox" name="livestream" value="livestream" > Livestream Video Capture<br><br>
-							<input type="checkbox" name="document" value="livestream" > Video/Photographic Event Documentation<br><br>
+							<input type="checkbox" name="livestream" value="livestream"> Livestream Video Capture<br><br>
+							<input type="checkbox" name="document" value="livestream"> Video/Photographic Event Documentation<br><br>
 							<input type="checkbox" name="music" value="music"> Music Composition<br><br>
 							<input type="checkbox" name="videogame" value="videogame"> Video Game Development<br><br>
-						
+
 						</div>
 
 					</div>
-					
+
 					<!--Goal?					-->
 					<div class="row">
 						<div class="col-sm-7">
 							<label for="">Keep Raw Files?</label>
-<!--							<div class = "form-control">-->
-							<select name="keep_raw" class = "form-control">
+							<!--							<div class = "form-control">-->
+							<select name="keep_raw" class="form-control">
 								<option value="no">No, I only want the final video production</option>
 								<option value="yes">Yes, Please give me all the raw footage and the final video production.</option>
 								<option value="no">This is not a video production request</option>
-							
+
 
 							</select>
-<!--							</div>-->
+							<!--							</div>-->
 						</div>
 
 					</div>
-					
+
 					<br>
 					<br>
 
@@ -267,7 +509,7 @@ mail($to, $subject, $message, $headers);
 
 
 				</form>
-				
+
 			</div>
 		</div>
 	</div>

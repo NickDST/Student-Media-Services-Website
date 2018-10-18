@@ -19,6 +19,7 @@ if ( isset( $_SESSION[ 'studentid' ] ) ) {
 	//echo "nothing yet";
 }
 include ( 'includes/dbh.inc.php' );
+include ( 'emailheader.php' );
 $sql = "SELECT * FROM students WHERE studentid = '$id'";
 //echo $id;
 $result = mysqli_query( $connection, $sql );
@@ -176,6 +177,7 @@ $username_fullname = $student['name'];
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-map-o"></i><a href="exec_add_student.php">Add Student to SMS</a></li>
 							<li><i class="menu-icon fa fa-map-o"></i><a href="searchstudent.php">search student</a></li>
+							<li><i class="menu-icon fa fa-map-o"></i><a href="emailshooter.php">Send Email Test</a></li>
                            
 						
 						

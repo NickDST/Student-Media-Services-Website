@@ -166,7 +166,32 @@ if ($queryResults > 0) {
 			<br>
 			
 			<h3>People in this SIG</h3>
+			<br>
+			
+						
+						<form method="POST">
+						<button type="submit" name="addeq" class = 'btn btn-warning'>...Add students into this sig</button>
+						</form>
+						<br>
+						<?php 
+						
+						if(isset($_POST['addeq']) & !empty(isset($_POST['addeq']))){
+							
+								echo "<script>window.location.href =  'sig_add_student.php?sig_name=" . $sig_name . "';</script>;";
+								
+								//echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
+	
+							}
+
+						
+						
+						
+						?>
+			
+			
 			<hr>
+			
+			
 			<?php
 			
 	
@@ -186,7 +211,7 @@ if ($queryResults > 0) {
 					<h3>" . $row[ 'name' ] . "</h3>
 					<p>" . $row[ 'position' ] . "</p>
 				</div>
-				<a class = 'btn btn-success' href = 'sig_eq_certification.php?studentid=" . $row[ 'studentid' ] . "&signame=" . $sig_name ."'>Certify Equipment</a>
+				<a class = 'btn btn-success' href = 'sig_eq_certification.php?studentid=" . $row[ 'studentid' ] . "&signame=" . $sig_name ."'>Certify Equipment + Student Info</a>
 				<hr>";
 									}
 

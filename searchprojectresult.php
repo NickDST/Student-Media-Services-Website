@@ -1,4 +1,6 @@
-<?php include 'hubheader.php' ?>
+<?php include 'hubheader.php' ;
+include ( 'emailheader.php' );
+?>
 
      <div class="col-xl-10" >
                 <div class="card" >
@@ -32,7 +34,7 @@
 					<p>" . $row[ 'datetime_end' ] . "</p>
 					<p> Requestor: " . $row[ 'requestor_name' ] . "</p>
 					</div>
-					<a class = 'btn btn-success' href = 'activateproject.php?name=" . $row[ 'request_name' ] . "&id=" . $row[ 'request_id' ] . "'>Initiate this Project</a>
+					<a class = 'btn btn-success' href = 'searchprojectdesc.php?name=" . $row[ 'project_name' ] . "&id=" . $row[ 'projectid' ] . "'>View Project Details</a>
 				<hr>";
 											/*	<a href = 'confirmpending.php?name=".$row['requestee']."&startdate=".$row['datetime_start']."&id=".$row['requestid']."'>More Info
 												</a> */

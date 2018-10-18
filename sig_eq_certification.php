@@ -57,12 +57,14 @@ if ( $queryResults > 0 ) {
 
 			if ( $queryResults > 0 ) {
 				while ( $row = mysqli_fetch_assoc( $result ) ) {
+					$viewed_student_id = $row['studentid'];
 
 					?>
 
 			<h4>
 				<?php echo "Student Name: ". $row['name'];?>
 			</h4>
+		
 			<br>
 			<h4>
 				<?php echo "Position: ". $row['sig_position'];?>
@@ -221,6 +223,54 @@ if ( $queryResults > 0 ) {
 						
 						
 						
+						
+						
+						
+                        
+                    </div>
+                </div>
+                <!-- /# card -->
+            </div>
+
+<div class="col-xl-11" >
+                <div class="card" >
+                    <div class="card-header">
+                        <h3>DELETE THIS STUDENT</h3>
+                    </div>
+                    <div class="" style = "padding-left:20px; padding-top:10px; padding-right:10px;">
+						<h2>Permanently Remove this person from the SIG</h2>
+						<br>
+						<div class="alert alert-danger" role="alert">
+							WARNING: This will remove the Student from this SIG. The equipment certified will stay certified. 
+						</div>
+						<br>
+						
+						
+							
+						
+						
+						
+						
+                    </div>
+                    <div class="" style = "padding-left:20px; padding-top:10px ;">
+	
+						
+						<form method="POST">
+						<button type="submit" name="remove_student_from_sig" class = 'btn btn-danger'>REMOVE THE STUDENT FROM THIS SIG</button>
+						</form>
+						
+						<?php 
+						
+						if(isset($_POST['remove_student_from_sig']) & !empty(isset($_POST['remove_student_from_sig']))){
+							
+								echo "<script>window.location.href =  'remove_student_from_sig.php?remove_studentid=" . $viewed_student_id . "&signame=" . $sig_name . "';</script>;";
+								
+								//echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
+	
+							}
+
+						?>
+					<br>
 						
 						
 						

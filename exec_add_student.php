@@ -90,18 +90,18 @@ include 'hubheader.php';
 														if ( $addstudentresult ) {
 															
 															
-															echo '<script>window.location.href = "tech_add_equipment.php?success=uaodifljkasdf";</script>';	
+															echo '<script>window.location.href = "exec_add_student.php?success=uaodifljkasdf";</script>';	
 															
 
 
 														} else {
 															
-															echo '<script>window.location.href = "tech_add_equipment.php?error=Entry failed to be added";</script>';	
+															echo '<script>window.location.href = "exec_add_student.php?error=Entry failed to be added";</script>';	
 														}
 														
 														
 													} else {
-														echo '<script>window.location.href = "tech_add_equipment.php?error=This isnt ok";</script>';	
+														echo '<script>window.location.href = "exec_add_student.php?error=This isnt ok";</script>';	
 														
 													}
 													

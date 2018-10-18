@@ -3,6 +3,19 @@
 session_start();
 
 require_once( 'includes/dbh.inc.php' );
+
+
+//$projectid = mysqli_real_escape_string( $connection, $_GET[ 'id' ] );
+$project_name = mysqli_real_escape_string( $connection, $_GET[ 'name' ] );
+
+$sql = "SELECT * FROM project_list WHERE project_name = '$project_name'";
+//echo $id;
+$result = mysqli_query( $connection, $sql );
+while ( $projectinfo = $result->fetch_assoc() ):
+	
+$projectid = $projectinfo['projectid'];
+
+endwhile;
 ?>
 
 	<?php 	if ( isset( $_GET[ 'error' ] ) ) {
@@ -81,7 +94,7 @@ if ( isset( $_POST ) & !empty( $_POST ) ) {
 
 	} else {
 		//echo "Invalid Username/Password";
-		echo '<script>window.location.href = "snake.php?error=Invalid Username/Password";</script>';	
+		echo '<script>window.location.href = "login.php?error=Invalid Username/Password";</script>';	
 		//echo "<script>window.location.href = 'login.php?error='$ello' Username/Password';</script>";
 
 	}
@@ -95,6 +108,16 @@ if ( isset( $_POST ) & !empty( $_POST ) ) {
 
 			
 					<?php
+					
+					if ( isset( $_GET[ 'name' ] ) ) {
+						
+						echo "<script> window.location.href = 'searchprojectdesc.php?name=" . $project_name . "&id=" . $projectid . "'</script>";
+					}
+					
+					
+					
+					
+					
 
 					echo "Currently Logged in as " . $_SESSION[ 'studentid' ];
 					echo '<script>window.location.href = "hub.php";</script>';
@@ -108,7 +131,7 @@ if ( isset( $_POST ) & !empty( $_POST ) ) {
 
 <head>
   <meta charset="UTF-8">
-  <title>Snake highlight</title>
+  <title>SMS Login</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   

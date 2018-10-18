@@ -1,4 +1,8 @@
-<?php include 'hubheader.php'?>
+<?php include 'hubheader.php';
+//include ( 'emailheader.php' );
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+?>
 
 
 
@@ -166,6 +170,90 @@
 									$result2 = mysqli_query( $connection, $sql2 );
 									if ( $result2 ) {
 										echo "success in removing the request";
+										
+										
+								$to = $project_manager_email;
+									$subject = "Project has been initiated";
+									$message = "localhost/smsdb/login.php?name=$name_of_project";
+										
+									$headers = 'From: SMS Network <SMS@database.com>' . PHP_EOL .
+										'Reply-To: SMS Network <SMS@database.com>' . PHP_EOL .
+										'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+									//mail($to, $subject, $message, $headers);
+									//echo "<br>email to person sent";
+										$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+										
+										
+										
+								$to = $literally_everyone_email;
+									$subject = "Project has been initiated";
+									$message = "localhost/smsdb/login.php?name=$name_of_project";
+										
+									$headers = 'From: SMS Network <SMS@database.com>' . PHP_EOL .
+										'Reply-To: SMS Network <SMS@database.com>' . PHP_EOL .
+										'X-Mailer: PHP/' . phpversion() . "Content-type: text/html";
+									//mail($to, $subject, $message, $headers);
+										
+										$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+try {
+    //Server settings
+   // $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.office365.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = $very_secure_email_username;                 // SMTP username
+    $mail->Password = $very_secure_email_password;                           // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to
+    //Recipients
+    $mail->setFrom($very_secure_email_username, 'Nick');
+    $mail->addAddress($to, 'Recipient');     // Add a recipient
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
+    $mail->AltBody = $message;
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+}
+									//echo "<br>email to person sent";
+	
+										
+										
+										
+										
+										
+										
+										
+										
+										
 										
 										
 										
