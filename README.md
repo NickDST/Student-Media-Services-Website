@@ -1,6 +1,8 @@
-# smsdb2
-Project Management system for SMS
+# Student Media Services Website Database
 
-This is the second iteration of the project management system for SMS to log projects, requests, service hours, Student interest groups, equipment catalog and more.
+<h3>Example: sms.concordiashanghai.org</h3>
+
+This is the second iteration of the project management system for SMS to log SMS Projects, project requests, service hours, Student Interest Groups, equipment catalog, student information and more.
+
 
 ![alt text](https://github.com/NickDST/smsdb2/blob/master/readme_images/image_1.png)
