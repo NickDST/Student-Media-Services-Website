@@ -117,4 +117,12 @@ If you want to add or delete or update with SQL just look up the syntax online a
 
 
 
+<h3>Credits to used Sources</h3>
+<hr>
+The nice login: Mikael Ainalem (https://codepen.io/ainalem/pen/EQXjOR)
+Index Page: HTML5 UP (https://html5up.net/spectral)
+Dashboard CSS : (https://github.com/puikinsh/sufee-admin-dashboard/blob/master/LICENSE)
+
+
+
 
