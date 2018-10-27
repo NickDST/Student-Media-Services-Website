@@ -209,6 +209,8 @@ if ( $queryResults > 0 ) {
 					<p>" . $row[ 'eq_description' ] . "</p>
 				</div>
 				<a class = 'btn btn-success' href = 'addeq_for_student.php?studentid=" . $certify_student . "&eq_id=" . $row[ 'eq_id' ] . "&signame=" . $sig_name . "'>Add This equipment</a>
+				
+				<a class = 'btn btn-secondary' href = 'change_eq_sig_all.php?studentid=" . $certify_student . "&eq_id=" . $row[ 'eq_id' ] . "&signame=" . $sig_name . "'>Add EQ for everyone</a>
 				<hr>";
 									}
 
