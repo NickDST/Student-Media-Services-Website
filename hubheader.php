@@ -118,6 +118,10 @@ $username_fullname = $student['name'];
                         <a href="allprojects.php"> <i class="menu-icon ti-align-justify"></i>All Projects Table</a>
                     </li>
 					
+					<li>
+                        <a href="sig_attendance.php"> <i class="menu-icon ti-alarm-clock"></i>Attendance</a>
+                    </li>
+					
 					
 				
 					

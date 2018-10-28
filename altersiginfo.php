@@ -126,6 +126,27 @@ if ($queryResults > 0) {
 			
 			
 			<br>
+			<hr>
+<!--attendance			-->
+			<form method="POST">
+						<button type="submit" name="attendance" class = 'btn btn-secondary'>System Attendance</button>
+						</form>
+						<br>
+						<?php 
+						
+						if(isset($_POST['attendance']) & !empty(isset($_POST['attendance']))){
+							
+								echo "<script>window.location.href =  'sig_manage_attendance.php?sig_name=" . $sig_name . "';</script>;";
+								
+								//echo '<script>window.location.href = "addselfproject2.php?success=Entry added";</script>';	
+	
+							}
+
+						
+						
+						
+						?>
+			
 	
 			
 		</div>
