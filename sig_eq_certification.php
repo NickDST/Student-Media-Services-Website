@@ -81,46 +81,54 @@ if ( $queryResults > 0 ) {
 			
 			<h2>List of Equipment Student has access to: </h2>
 			<br>
-			<br>
-			
-			<?php
+			<table class="table table-light project-table table-hover">
+				<tr style="background-color:ghostwhite;">
+										<th>EQ Name</th>
+										<th>EQ Code</th>
+										<th>SIG Certified In</th>
+										<th>Certified By</th>
 
-			$sql = "SELECT eqcatalog.*, students_in_eq.* FROM eqcatalog, students_in_eq WHERE eqcatalog.eq_id = students_in_eq.eq_id AND students_in_eq.studentid = '$certify_student'";
+									</tr>
+									<?php
 
-
-			$result = mysqli_query( $connection, $sql );
-
-			$queryResults = mysqli_num_rows( $result );
-
-			if ( $queryResults > 0 ) {
-				while ( $row = mysqli_fetch_assoc( $result ) ) {
-
-					?>
-
-			<h5>
-				<?php echo "Equipment Name: ". $row['eq_name'];?>
-			</h5>
-			
-			<p>
-				<?php echo "Description: ". $row['eq_description'];?>
-			</p>
-			<p>
-				<?php echo "Certified in: ". $row['sig_certified'];?>
-			</p>
-			<hr>
-
-			<?php
-
-
-			}
-
-			} else {
+		
+									//$sql = "SELECT project_list.*, students.* from project_list, students WHERE project_list.student_rep = students.studentid";
 				
-				echo "<h5>It Appears that the student does not have access to any equipment</h5>";
-			
-			
-			
-			}?>
+									$sql = "SELECT students_in_eq.*, students.*, eqcatalog.* FROM students_in_eq, students, eqcatalog WHERE students_in_eq.studentid = students.studentid AND eqcatalog.eq_id = students_in_eq.eq_id AND students_in_eq.studentid = '$certify_student'";
+		
+		
+		
+									$result = mysqli_query( $connection, $sql );
+
+//
+									$resultCheck = mysqli_num_rows( $result );
+									if ( $resultCheck > 0 ) {
+										while ( $row = mysqli_fetch_assoc( $result ) ) {
+
+										
+
+
+
+
+
+											echo "<tr>
+    <td>" . $row[ "eq_name" ] . "</td>
+    <td>" . $row[ "eq_code" ] . "</td>
+    <td>" . $row[ 'sig_certified' ] . "</td>
+    <td>" . $row[ "certified_by" ] . "</td>
+ 
+
+    </tr>";
+
+										}
+
+										echo "</table>";
+									} else {
+										echo "0 results";
+									}
+									//$hours = "0";
+	
+									?>
 
 
 <br>
@@ -189,11 +197,14 @@ if ( $queryResults > 0 ) {
 						
                     </div>
                     <div class="" style = "padding-left:20px; padding-top:10px ;">
-	
+	<form method="post">
 						
 						
 							<?php
 								//$sql = "SELECT eqcatalog.*, eq_in_sigs.* FROM eqcatalog, eq_in_sigs WHERE eq_in_sigs.eq_id = eqcatalog.eq_id AND eq_in_sigs.sig_name = '$sig_name'";
+						$checkbox = "checkbox";
+						$eqarray = "eqarray[]";
+						$space = " Certify this piece of equipment ";
 						
 								$sql = "SELECT * FROM eqcatalog";
 								$result = mysqli_query( $connection, $sql );
@@ -201,7 +212,98 @@ if ( $queryResults > 0 ) {
 								if ( $queryResults > 0 ) {
 									while ( $row = mysqli_fetch_assoc( $result ) ) {
 										
+																echo "
+				
+					<h3>" . $row[ 'eq_name' ] . "</h3>
+					<p>" . $row[ 'eq_description' ] . "</p>
+				
+				
+				<input type=". $checkbox. " name=".$eqarray ." value=".  $row['eq_id'] ." <span>".$space."<span>
+				
+				<br><br><a class = 'btn btn-secondary' href = 'change_eq_sig_all.php?studentid=" . $certify_student . "&eq_id=" . $row[ 'eq_id' ] . "&signame=" . $sig_name . "'> Add EQ for everyone</a>
+				<hr>";
+									}
+
+
+								} else {
+									
+									echo "nothing here";
+								}	?>
 										
+						<br>
+													<button class="btn btn-success" name='certify_equipment' type="submit" value='certify_equipment'>Certify the select equipment</button>
+		
+												</form>
+												<br>
+						<br>
+
+												<!--Adding a student to the project-->
+												<?php
+
+												if ( isset( $_POST[ 'certify_equipment' ] ) == 'certify_equipment' & !empty( $_POST[ 'certify_equipment' ] ) ) {
+													
+													 $aEquipment = $_POST['eqarray'];
+													
+													if(empty($aEquipment)) 
+  {
+    
+	$error = "You didnt select anything";
+	 echo "<script>window.location.href =  'altersiginfo.php?error=" . $error . "&name=". $sig_name. "';</script>;";
+														
+														
+  } 
+  else 
+  {
+    $N = count($aEquipment);
+
+    echo("You selected $N door(s): ");
+    for($i=0; $i < $N; $i++)
+    {
+      //echo($aStudent[$i] . " ");
+		
+
+		
+													
+													$alreadysql = "SELECT * FROM students_in_eq WHERE eq_id = '$aEquipment[$i]' AND studentid = '$certify_student'";
+													//echo $alreadysql;
+													$alreadyresult = mysqli_query( $connection, $alreadysql );
+													$alreadyqueryResults = mysqli_num_rows( $alreadyresult );
+													
+													
+													if ( $alreadyqueryResults == 0 ) {
+
+													
+														$addstudentsql = "INSERT INTO students_in_eq (eq_id, studentid, certified_by, sig_certified) VALUES ('$aEquipment[$i]', '$certify_student', '$studentid', '$sig_name');";
+														
+														$addstudentresult = mysqli_query( $connection, $addstudentsql );
+													
+													
+													}
+													
+													
+													
+												
+													// - - - - -- - - -- - - - - - 
+													
+													
+														
+													
+													
+		
+    }
+	  $success = "Possibly Worked";
+	 echo "<script>window.location.href =  'altersiginfo.php?success=" . $success . "&name=". $sig_name. "';</script>;";
+	  
+	  
+  }				
+										
+												}
+						
+										
+							
+										
+										
+										/*
 										
 										echo "
 				<div>
@@ -219,7 +321,7 @@ if ( $queryResults > 0 ) {
 									
 									echo "nothing here";
 								}
-
+*/
 								?>
 						
 						

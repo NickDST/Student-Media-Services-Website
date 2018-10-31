@@ -100,7 +100,7 @@ if ($queryResults > 0) {
 									<?php
 
 		
-									$sql = "SELECT attendance_status.*, students.* from attendance_status, students WHERE attendance_status.studentid = students.studentid AND sig_name = '$sig_name'";
+									$sql = "SELECT attendance_status.*, students.* from attendance_status, students WHERE attendance_status.studentid = students.studentid AND sig_name = '$sig_name' AND open_session_id = '$open_attendance_id'";
 		
 		
 		
@@ -165,7 +165,7 @@ if ($queryResults > 0) {
 									<?php
 
 		
-									$sql = "SELECT attendance_status.*, students.* from attendance_status, students WHERE attendance_status.studentid = students.studentid AND sig_name = '$sig_name' AND status = 'absent'";
+									$sql = "SELECT attendance_status.*, students.* from attendance_status, students WHERE attendance_status.studentid = students.studentid AND sig_name = '$sig_name' AND status = 'absent' AND open_session_id = '$open_attendance_id' ";
 		
 		
 		

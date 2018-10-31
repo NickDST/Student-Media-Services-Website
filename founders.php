@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic - Spectral by HTML5 UP</title>
+		<title>Founding Members of SMS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
@@ -21,18 +21,17 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="index.htm">Spectral</a></h1>
+						<h1><a href="index.htm">Student Media Services</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
+												<li><a href="login.php">Log In</a></li>
+<!--											<li><a href="login.php">History of SMS</a></li>-->
+											<li><a href="leaders_of_sms.php">Leaders of SMS 2018-2019</a></li>
+											<li><a href="founders.php">Founders of SMS</a></li>
 										</ul>
 									</div>
 								</li>
@@ -43,23 +42,59 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Generic Page</h2>
-							<p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+							<h2>Founding Members of SMS</h2>
+							<p>Those who originally helped found SMS</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>Lorem ipsum dolor</h3>
-								<p>Morbi mattis mi consectetur tortor elementum, varius pellentesque velit convallis. Aenean tincidunt lectus auctor mauris maximus, ac scelerisque ipsum tempor. Duis vulputate ex et ex tincidunt, quis lacinia velit aliquet. Duis non efficitur nisi, id malesuada justo. Maecenas sagittis felis ac sagittis semper. Curabitur purus leo, tempus sed finibus eget, fringilla quis risus. Maecenas et lorem quis sem varius sagittis et a est. Maecenas iaculis iaculis sem. Donec vel dolor at arcu tincidunt bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ut aliquet justo. Donec id neque ipsum. Integer eget ultricies odio. Nam vel ex a orci fringilla tincidunt. Aliquam eleifend ligula non velit accumsan cursus. Etiam ut gravida sapien.</p>
+								<h3>The Founding Members</h3>
+								<p>The idea of serving through media was first inspired by Mr. Johnston, our faculty advisor. This idea led to an XPloration program for freshmen and sophomores in the High School joined by an Inspiration program for seventh and eighth graders in Middle School. After the activity, five high school students dedicated their summer vacation to put a structure together for the organization. Other students joined to create the Executive Committee for the first year of SMS.</p>
+								
+								<hr />
 
-								<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+								<h4>Garrett Lee- Leader of Music Composition 2015 ~ 2018,  Executive Committee 2015 ~ 2018</h4>
+								<p>Garrett has been one of the students who were actively involved in SMS since the very beginning. He actively participated in the Student Media-Startup XPloration and worked a summer with other high school students to start an organization. He is also on the Executive Committee and leading Music Composition interest group. After working with other individuals to organize SMS, he has learned that coordination is not an easy task although it might look easy from others’ perspectives. Based on the services that the SMS provides, he believes that the organization has a big future: Connecting students’ interest with education.</p>
+
+							
 
 								<hr />
 
-								<h4>Feugiat aliquam</h4>
-								<p>Nam sapien ante, varius in pulvinar vitae, rhoncus id massa. Donec varius ex in mauris ornare, eget euismod urna egestas. Etiam lacinia tempor ipsum, sodales porttitor justo. Aliquam dolor quam, semper in tortor eu, volutpat efficitur quam. Fusce nec fermentum nisl. Aenean erat diam, tempus aliquet erat.</p>
+								<h4>Annie Chen- Leader of INK Creations 2015 ~ 2016, Executive Committee 2015 ~ 2016</h4>
+								<p>Annie wanted to join SMS because she knew that it had the potential to promote communications through the different technologies that it could provide. SMS provided students with the opportunity to explore new tools and utilize them to improve the school. She gained experience in initiating a startup organization and learned lessons on how to be effective in one's work and establish a position in the community. If people realize the potential of SMS, it could become an organization that truly allows students to discover interests and the power of technology to innovate.  </p>
+								
+								<hr />
 
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+								<h4>Suhye Kim- Leader of Broadcasting 2015 ~ 2016, Executive Committee 2015 ~ 2016</h4>
+								<p>Suhye started her SMS career with:  “Hi, I’m Suhye; what’s all this?” From then on she submerged herself into the chaotic, hectic, yet thrilling roller coaster life of a member of the SMS executive. Using her background knowledge in digital illustrations, media productions, and DIY trivia, Suhye laid hands on stage and backstage media productions, and actively advocating self-interested learning during conferences. Suhye states her passion for changing the direction of student learning and peer mentorship developed through interacting with kids from all grades who share a common interest investing in their passion. It greatly saddens her to leave so soon (as she was a senior when SMS launched), but Suhye is thrilled to see the bright future ahead for SMS.</p>
+								
+								
+								
+								<hr />
+
+								<h4>Hunter David- Leader of Tech Team 2015 ~ 2017, Executive Committee 2015 ~ 2017</h4>
+								<p>Before August of this year, Hunter had no idea what SMS was, or what they did. Today, Hunter can’t get enough of SMS activities. Hunter started working with SMS in the fall of 2015, and has been working with SMS since. Hunter used his technological knowledge learned from his part time job at Shanghai Geeks, and helped with the formation of the Tech Team. Through Tech Team, Hunter has had the ability to show other students SMS, and get them involved. Overall, over 20 people are actively participating in Tech Team, and Hunter hopes this number stays on the rise. Hunter thinks that SMS has the potential to change the dynamics of Concordia, and he hopes to be there every step of the way.</p>
+								
+								<hr />
+
+								<h4>Yiluo Li - Leader of Hacking Team 2015 ~ 2017, Executive Committee 2016 ~ 2017</h4>
+								<p>YIluo started the SMS a little bit different from other people. She was less of a media person, but more academic and geeky about coding and physics. Through her experience as core member of student organization TechoMedia as well as Course Reviewer of Bigger Lab, she learned about hackathon and other hackerspaces in Shanghai that she wanted to bring into Concordia. With Kevin Jin, another executive member, Yiluo worked to try to get SMS hackathon running. Although Hacking Team is still a small part of the SMS, she has the ability to push it further more to the public with the inertia of SMS.</p>
+								
+								<hr />
+
+								<h4>Jonathan Ko- Leader of Video Production and Photoshop 2015 ~ 2016, Executive Committee 2015 ~ 2016</h4>
+								<p>I am Jonathan Ko and will be graduating in 2018. I have been interested in technology since I met my computer. I love to edit photos and edit videos and my favorite applications are Photoshop and After Effects. I am not a guru in both of the applications but I have found passion for them both and consider myself to be pretty decent at it. I have been involved in SMS for video editing this year for example, APAC volleyball. SMS has grown so much this year. At the start there was practically no one and during the year the organization just grew so much! I am so lucky to be in this organization and cannot wait to see how much of an improvement we will see in future years.</p>
+								
+								<hr />
+
+								<h4>Kevin Jin- Leader of Video Production 2015 ~ 2019, Executive Committee 2016 ~ 2018</h4>
+								<p>Film maker, producer, designer, programmer. I have an eye for creativity and innovation. Having started programming at age 12, I’ve spent most of my life perfecting design and programs. I’ve worked with numerous clients in many different fields, from startups to enterprises. As a producer of a SWAN film, I have producing and directing experiences with many different projects. Having started working freelance since 14, I currently work with many different companies locally in Shanghai to bring better developed applications and services to customers. Searching to help Concordia’s tech community, I attended the first and second Shanghai Mini Maker Fair.  Founding SMS last year, I since have been trying to help realize student’s dreams and passion in technology.</p>
+								
+								<hr />
+
+								
+								<h4>Mr. Johnston- Faculty Advisor 2015 ~ 2017</h4>
+								
 
 							</div>
 						</section>
@@ -67,6 +102,7 @@
 
 				<!-- Footer -->
 					<footer id="footer">
+<!--						
 						<ul class="icons">
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -77,6 +113,7 @@
 						<ul class="copyright">
 							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 						</ul>
+-->
 					</footer>
 
 			</div>

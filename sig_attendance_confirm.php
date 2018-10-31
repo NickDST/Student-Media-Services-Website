@@ -12,7 +12,13 @@ $studentid = $id;
 //getting the GET variables	
 $sig_name = mysqli_real_escape_string($connection, $_GET['sig_name']);
 $open_attendance_id = mysqli_real_escape_string($connection, $_GET['open_attendance_id']);
-$ip = "this is ip";
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+    $ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $ip = $_SERVER['REMOTE_ADDR'];
+}
 
 
 //Checking if the student actually is trying to access their attendance, not change it
@@ -74,7 +80,7 @@ if ($queryResults > 0) {
 							
 							<br>
 							<br>
-													<button class="btn btn-success" name='submit' type="submit" value='submit'>This equipment to the project</button>
+													<button class="btn btn-success" name='submit' type="submit" value='submit'>I'm part of this attendance</button>
 												</form>
 						
 						<br>
