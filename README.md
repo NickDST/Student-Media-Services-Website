@@ -1,9 +1,5 @@
 # Student Media Services Website Database
 
-Test test test
-This is a test by Alan
-
-this is a change i made using a branch
 <h3>Example: sms.concordiashanghai.org</h3>
 
 This is the second iteration of the project management system for SMS to log SMS Projects, project requests, service hours, Student Interest Groups, equipment catalog, student information and more.
